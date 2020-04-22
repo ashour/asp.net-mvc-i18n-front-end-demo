@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Heaventure.Data;
 using System.Web.Mvc;
 
 namespace Heaventure.Controllers
@@ -10,21 +7,16 @@ namespace Heaventure.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = Constellation.All();
+
+            return View(model);
         }
 
-        public ActionResult About()
+        public ActionResult Details(int id)
         {
-            ViewBag.Message = "Your application description page.";
+            var model = Constellation.FindById(id);
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(model);
         }
     }
 }
