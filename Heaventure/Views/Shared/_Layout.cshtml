@@ -1,10 +1,18 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{ bool IsRightToLeft = System.Globalization.CultureInfo.CurrentCulture.TextInfo.IsRightToLeft; }
+<!DOCTYPE html>
+<html
+    lang="@System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName"
+    dir="@(IsRightToLeft ? "rtl" : "ltr")"
+>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - @Resources.AppName</title>
     @Styles.Render("~/Content/css")
+    @if (IsRightToLeft)
+    {
+        @Styles.Render("~/Content/bootstrap-rtl.css")
+    }
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
