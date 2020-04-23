@@ -15,14 +15,8 @@
 
         <p>@Model.Description</p>
 
-        <dl class="dl-horizontal">
-            <dt>Number of Stars</dt>
+        <p><strong>@Smart.Format(Resources.StarCount, Model.StarCount)</strong></p>
 
-            <dd>@Model.StarCount</dd>
-
-            <dt>Added</dt>
-
-            <dd>@Model.CreatedAt</dd>
-        </dl>
+        <p>@Model.CreatedAt</p>
     </div>
 </div>

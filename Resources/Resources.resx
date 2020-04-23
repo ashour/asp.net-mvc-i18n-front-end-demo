@@ -126,4 +126,7 @@
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="StarCount" xml:space="preserve">
+    <value>{0:plural:Has 1 star|Has {} stars}.</value>
+  </data>
 </root>

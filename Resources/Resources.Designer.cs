@@ -86,5 +86,14 @@ namespace Resources {
                 return ResourceManager.GetString("Home", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0:plural:Has 1 star|Has {} stars}..
+        /// </summary>
+        public static string StarCount {
+            get {
+                return ResourceManager.GetString("StarCount", resourceCulture);
+            }
+        }
     }
 }

@@ -126,4 +126,7 @@
   <data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
+  <data name="StarCount" xml:space="preserve">
+    <value>مكون من {0:plural(ar):ولا نجمة|نجمة واحدة|نجمتين|{} نجمات|{} نجمة|{} نجمة}</value>
+  </data>
 </root>
