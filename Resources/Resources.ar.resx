@@ -120,4 +120,10 @@
   <data name="AppName" xml:space="preserve">
     <value>هفنتيور</value>
   </data>
+  <data name="FooterMessage" xml:space="preserve">
+    <value>بني بواسطة {0} و {1}شرح و صور الكوكبات من &lt;a href="{2}"&gt;ويكيبيديا&lt;/a&gt;</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
 </root>

@@ -68,5 +68,23 @@ namespace Resources {
                 return ResourceManager.GetString("AppName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Built with {0} &amp;amp; {1}. Constellation descriptions &amp;amp; images are from &lt;a href=&quot;{2}&quot;&gt;Wikipedia.&lt;/a&gt;.
+        /// </summary>
+        public static string FooterMessage {
+            get {
+                return ResourceManager.GetString("FooterMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
     }
 }

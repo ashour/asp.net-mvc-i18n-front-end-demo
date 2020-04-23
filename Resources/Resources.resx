@@ -120,4 +120,10 @@
   <data name="AppName" xml:space="preserve">
     <value>Heaventure</value>
   </data>
+  <data name="FooterMessage" xml:space="preserve">
+    <value>Built with {0} &amp;amp; {1}. Constellation descriptions &amp;amp; images are from &lt;a href="{2}"&gt;Wikipedia.&lt;/a&gt;</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
 </root>
