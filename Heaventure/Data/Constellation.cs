@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Heaventure.Data
 {
@@ -14,12 +15,27 @@ namespace Heaventure.Data
 
         public static List<Constellation> All()
         {
+            if (CultureInfo.CurrentCulture.TwoLetterISOLanguageName == "ar")
+            {
+                return AllArabic();
+            }
+            else
+            {
+                return AllEnglish();
+            }
+        }
+
+        public static Constellation FindById(int id) => 
+            All().Find(constellation => constellation.Id == id);
+
+        private static List<Constellation> AllEnglish()
+        {
             return new List<Constellation>()
             {
                 new Constellation() {
                     Id = 1,
                     Name = "Capricornus",
-                    Description = "Capricornus /ˌkæprɪˈkɔːrnəs/ is one of the constellations of the zodiac. Its name is Latin for \"horned goat\" or \"goat horn\" or \"having horns like a goat's\", and it is commonly represented in the form of a sea goat: a mythical creature that is half goat, half fish. Its symbol is Capricorn.svg (Unicode ♑).",
+                    Description = "Capricornus /ˌkæprɪˈkɔːrnəs/ is one of the constellations of the zodiac. Its name is Latin for \"horned goat\" or \"goat horn\" or \"having horns like a goat's\", and it is commonly represented in the form of a sea goat: a mythical creature that is half goat, half fish. Its symbol is (Unicode ♑).",
                     ImageUrl = "~/Content/Images/Capricornus.png",
                     StarCount = 3,
                     CreatedAt = new DateTime(2020, 04, 22)
@@ -27,7 +43,7 @@ namespace Heaventure.Data
                 new Constellation() {
                     Id = 2,
                     Name = "Aries",
-                    Description = "Aries is one of the constellations of the zodiac. It is located in the Northern celestial hemisphere between Pisces to the west and Taurus to the east. The name Aries is Latin for ram, and its symbol is Aries.svg (Unicode ♈), representing a ram's horns.",
+                    Description = "Aries is one of the constellations of the zodiac. It is located in the Northern celestial hemisphere between Pisces to the west and Taurus to the east. The name Aries is Latin for ram, and its symbol is (Unicode ♈), representing a ram's horns.",
                     ImageUrl = "~/Content/Images/Aries.png",
                     StarCount = 18,
                     CreatedAt = new DateTime(2020, 04, 20)
@@ -71,8 +87,63 @@ namespace Heaventure.Data
             };
         }
 
-        public static Constellation FindById(int id) => 
-            All().Find(constellation => constellation.Id == id);
-
+        private static List<Constellation> AllArabic()
+        {
+            return new List<Constellation>()
+            {
+                new Constellation() {
+                    Id = 1,
+                    Name = "الجدي",
+                    Description = "برج الجدي هو أحد الأبراج البروج. اسمها لاتيني للقرن الماعز أو قرن الماعز أو وجود قرون مثل الماعز ، ويتم تمثيله عادة في شكل ماعز بحري: مخلوق أسطوري نصف ماعز ونصف سمكة. رمزها (Unicode ♑)",
+                    ImageUrl = "~/Content/Images/Capricornus.png",
+                    StarCount = 3,
+                    CreatedAt = new DateTime(2020, 04, 22)
+                },
+                new Constellation() {
+                    Id = 2,
+                    Name = "الحمل",
+                    Description = "برج الحمل هو أحد الأبراج البروج. تقع في نصف الكرة السماوية الشمالي بين برج الحوت إلى الغرب و برج الثور إلى الشرق. الاسم Aries هو لاتيني للرام ، ورمزه هو (Unicode ♈) ، الذي يمثل قرون الكبش.",
+                    ImageUrl = "~/Content/Images/Aries.png",
+                    StarCount = 18,
+                    CreatedAt = new DateTime(2020, 04, 20)
+                },
+                new Constellation()
+                {
+                    Id = 3,
+                    Name = "هيدروس",
+                    Description = "هيدروس هو كوكبة صغيرة في السماء الجنوبية العميقة. كانت واحدة من اثني عشر كوكبة أنشأها بيتروس بلانسيوس من ملاحظات بيتر ديركزون كيزر وفريدريك دي هوتمان.",
+                    ImageUrl = "~/Content/Images/Hydrus.png",
+                    StarCount = 18,
+                    CreatedAt = new DateTime(2020, 03, 30)
+                },
+                new Constellation()
+                {
+                    Id = 4,
+                    Name = "بوبيس",
+                    Description = "بوبيس هو كوكبة في السماء الجنوبية. كان Puppis ، The Poop Deck ، في الأصل جزءًا من كوكبة كبيرة جدًا ، تم تقسيم سفينة Jason و Argonauts ، Argo Navis ، التي كانت بعد قرون من وصفها الأولي ، إلى ثلاثة أجزاء ، الجزءان الآخران هما Carina (العارضة والبدن) ) وفيلا (أشرعة السفينة).",
+                    ImageUrl = "~/Content/Images/Puppis.png",
+                    StarCount = 9,
+                    CreatedAt = new DateTime(2020, 04, 14)
+                },
+                new Constellation()
+                {
+                    Id = 5,
+                    Name = "تلسكوبيم",
+                    Description = "تلسكوبي هو كوكبة صغيرة في نصف الكرة السماوية الجنوبي ، واحد من اثني عشر اسمه في القرن الثامن عشر من قبل الفلكي الفرنسي نيكولا لويس دي لاكايل وواحدة من عدة أدوات علمية تصور. اسمها هو شكل لاتيني للكلمة اليونانية للتلسكوب.",
+                    ImageUrl = "~/Content/Images/Telescopium.png",
+                    StarCount = 2,
+                    CreatedAt = new DateTime(2020, 04, 19)
+                },
+                new Constellation()
+                {
+                    Id = 6,
+                    Name = "أورسا ميجور",
+                    Description = "أورسا ميجور (المعروف أيضًا باسم الدب الكبير) هو كوكبة في السماء الشمالية ، والتي من المحتمل أن تعود أساطيرها المرتبطة إلى عصور ما قبل التاريخ. اسمها اللاتيني يعني تحملها أكبر (أو أكبر) ، في إشارة إليها ومقارنتها مع Ursa Minor القريبة ، الدب الأصغر.",
+                    ImageUrl = "~/Content/Images/UrsaMajor.png",
+                    StarCount = 20,
+                    CreatedAt = new DateTime(2020, 03, 21)
+                }
+            };
+        }
     }
 }
